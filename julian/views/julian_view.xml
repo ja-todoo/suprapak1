@@ -9,3 +9,5 @@
                 <field name="costo_1"/>
                 <field name="costo_2"/>
             </xpath>
+    </record>
+</odoo>
