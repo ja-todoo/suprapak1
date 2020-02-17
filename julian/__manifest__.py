@@ -5,7 +5,8 @@
     'author': "Livingston Arias Narváez",
     'website': "www.todoo.com",
     'category': '',
-    'depends': ['mrp.workcenter','mrp'],
+    'depends': ['mrp.workcenter','mrp','product',
+    'stock','resource'],
     'data': [ 'views/julian_view.xml',
     ],
     'installable': True
