@@ -24,10 +24,10 @@ class Produccion(models.Model):
                 finished_move.price_unit = (sum([-m.stock_valuation_layer_ids.value for m in consumed_moves.sudo()]) + work_center_cost + extra_cost) / qty_done
         return True
 
-    def _prepare_wc_analytic_line(self, wc_line,workcenter_id):
+    def _prepare_wc_analytic_line(self, wc_line):
         wc = wc_line.workcenter_id
         hours = wc_line.duration / 60.0
-        value = ((hours * wc.costs_hour) + (hours * workcenter_id.costo_1) + (hours * workcenter_id.costo_2)) 
+        value = hours * wc.costs_hour
         account = wc.costs_hour_account_id.id
         return {
             'name': wc_line.name + ' (H)',
