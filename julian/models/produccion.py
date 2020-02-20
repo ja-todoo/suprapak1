@@ -1,7 +1,7 @@
 from odoo import models,fields,api
 
 class Produccion(models.Model):
-    _inherit = 'mrp.production',''
+    _inherit = 'mrp.production'
     _description = 'produccion livingston'
 
     def _cal_price(self, consumed_moves):
@@ -27,7 +27,7 @@ class Produccion(models.Model):
     def _prepare_wc_analytic_line(self, wc_line):
         wc = wc_line.workcenter_id
         hours = wc_line.duration / 60.0
-        value = (hours * wc.costs_hour) #+ (hours * wc.costo_1) + (hours * wc.costo_2)) 
+        value = ((hours * wc.costs_hour) + (hours * wc.costo_1) + (hours * wc.costo_2)) 
         account = wc.costs_hour_account_id.id
         return {
             'name': wc_line.name + ' (H)',
