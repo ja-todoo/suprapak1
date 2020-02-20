@@ -8,8 +8,8 @@
             <xpath expr="//field[@name='costs_hour_account_id']" position="after">
                 <field name="costo_1"/>
                 <field name="analityc_count"/>
-                <field name="analityc_count2"/>
                 <field name="costo_2"/>
+                <field name="analityc_count2"/>
             </xpath>
         </field>
     </record>
