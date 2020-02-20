@@ -4,10 +4,10 @@ class Produccion(models.Model):
     _inherit = 'mrp.production'
     _description = 'produccion livingston'
 
-     def _cal_price(self, consumed_moves):
+    def _cal_price(self, consumed_moves):
         """Set a price unit on the finished move according to `consumed_moves`.
         """
-        super(MrpProduction, self)._cal_price(consumed_moves)
+        super(Produccion, self)._cal_price(consumed_moves)
         work_center_cost = 0
         finished_move = self.move_finished_ids.filtered(lambda x: x.product_id == self.product_id and x.state not in ('done', 'cancel') and x.quantity_done > 0)
         if finished_move:
