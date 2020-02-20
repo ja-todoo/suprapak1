@@ -27,7 +27,7 @@ class Produccion(models.Model):
     def _prepare_wc_analytic_line(self, wc_line):
         wc = wc_line.workcenter_id
         hours = wc_line.duration / 60.0
-        value = ((hours * wc.costs_hour) + (hours * wc.costo_1) + (hours * costo_2)) 
+        value = (hours * wc.costs_hour) #+ (hours * wc.costo_1) + (hours * wc.costo_2)) 
         account = wc.costs_hour_account_id.id
         return {
             'name': wc_line.name + ' (H)',
