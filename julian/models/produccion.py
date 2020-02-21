@@ -1,7 +1,8 @@
 from odoo import models,fields,api
+from odoo.exceptions import UserError
 
 class Produccion(models.Model):
-    _inherit = 'mrp.production'
+    _inherit = 'mrp.production','produccion'
     _description = 'produccion livingston'
 
     def _cal_price(self, consumed_moves):
@@ -22,12 +23,14 @@ class Produccion(models.Model):
                 qty_done = finished_move.product_uom._compute_quantity(finished_move.quantity_done, finished_move.product_id.uom_id)
                 extra_cost = self.extra_cost * qty_done
                 finished_move.price_unit = (sum([-m.stock_valuation_layer_ids.value for m in consumed_moves.sudo()]) + work_center_cost + extra_cost) / qty_done
+            raise UserError(_(work_center_cost))
         return True
+
 
     def _prepare_wc_analytic_line(self, wc_line):
         wc = wc_line.workcenter_id
         hours = wc_line.duration / 60.0
-        value = ((hours * wc.costs_hour) + (hours * self.costo_1) + (hours * self.costo_2))
+        value = ((hours * wc.costs_hour) + (hours * self.produccion.costo_1) + (hours * self.produccion.costo_2))
         account = wc.costs_hour_account_id.id
         return {
             'name': wc_line.name + ' (H)',
@@ -38,9 +41,9 @@ class Produccion(models.Model):
             'company_id': self.company_id.id,
         }
 
-    def _costs_generate(self):
-        """ Calculates total costs at the end of the production.
-        """
+    """def _costs_generate(self):
+         Calculates total costs at the end of the production.
+        
         self.ensure_one()
         AccountAnalyticLine = self.env['account.analytic.line'].sudo()
         for wc_line in self.workorder_ids.filtered('workcenter_id.costs_hour_account_id'):
@@ -50,5 +53,5 @@ class Produccion(models.Model):
                 # we use SUPERUSER_ID as we do not guarantee an mrp user
                 # has access to account analytic lines but still should be
                 # able to produce orders
-                AccountAnalyticLine.create(vals)
+                AccountAnalyticLine.create(vals)"""
 
