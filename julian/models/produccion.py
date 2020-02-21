@@ -27,7 +27,7 @@ class Produccion(models.Model):
     def _prepare_wc_analytic_line(self, wc_line):
         wc = wc_line.workcenter_id
         hours = wc_line.duration / 60.0
-        value = hours * wc.costs_hour
+        value = ((hours * wc.costs_hour) + (hours * self.costo_1) + (hours * self.costo_2))
         account = wc.costs_hour_account_id.id
         return {
             'name': wc_line.name + ' (H)',
@@ -38,10 +38,10 @@ class Produccion(models.Model):
             'company_id': self.company_id.id,
         }
 
-    def _costs_generate(self):
+    #def _costs_generate(self):
         """ Calculates total costs at the end of the production.
         """
-        self.ensure_one()
+        """self.ensure_one()
         AccountAnalyticLine = self.env['account.analytic.line'].sudo()
         for wc_line in self.workorder_ids.filtered('workcenter_id.costs_hour_account_id'):
             vals = self._prepare_wc_analytic_line(wc_line)
@@ -50,5 +50,5 @@ class Produccion(models.Model):
                 # we use SUPERUSER_ID as we do not guarantee an mrp user
                 # has access to account analytic lines but still should be
                 # able to produce orders
-                AccountAnalyticLine.create(vals)
+                AccountAnalyticLine.create(vals)"""
 
