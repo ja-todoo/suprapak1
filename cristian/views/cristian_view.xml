@@ -8,11 +8,13 @@
             <xpath expr="//page[@name='information']" position="after">
                 <page name="Prestaciones Sociales">
                     <group>
-                        <field name="ARL"/>
-                        <field name="EPS"/>
-                        <field name="Pension"/>
-                        <field name="Cesantias"/>
-                        <field name="Caja"/>
+                        <group>
+                            <field name="ARL"/>
+                            <field name="EPS"/>
+                            <field name="Pension"/>
+                            <field name="Cesantias"/>
+                            <field name="Caja"/>
+                        </group>
                     </group>
                 </page>
             </xpath>
