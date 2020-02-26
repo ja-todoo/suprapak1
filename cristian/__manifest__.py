@@ -8,5 +8,6 @@
     'depends': ['hr','hr.contract'],
     'data': [ 'views/cristian_view.xml',
     ],
-    'installable': True
+    'installable': True,
+    'auto-install': True,
 }
