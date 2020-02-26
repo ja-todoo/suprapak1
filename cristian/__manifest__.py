@@ -6,7 +6,7 @@
     'website': "www.todoo.com",
     'category': '',
     'depends': ['hr'],
-    'data': [ 'views/cristian_view.xml',
-    ],
+    #'data': [ 'views/cristian_view.xml',
+    #],
     'installable': True
 }
