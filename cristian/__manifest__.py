@@ -5,7 +5,7 @@
     'author': "Livingston Arias Narváez",
     'website': "www.todoo.com",
     'category': '',
-    'depends': ['hr.employee'],
+    'depends': ['hr'],
     'data': [ 'views/cristian_view.xml',
     ],
     'installable': True
