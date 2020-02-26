@@ -5,14 +5,14 @@ class ContractCristian(models.Model):
     _inherit = 'hr.contract'
     _description = 'Campos nuevos para el contrato'
 
-    ARL = fields.Many2one('res.partner')
+    arl = fields.Many2one('res.partner',string="ARL")
 
-    EPS = fields.Many2one('res.partner')
+    eps = fields.Many2one('res.partner',string="EPS")
 
-    Pension = fields.Many2one('res.partner',string="Pensión")
+    pension = fields.Many2one('res.partner',string="Pensión")
 
-    Cesantias = fields.Many2one('res.partner')
+    cesantias = fields.Many2one('res.partner',string="Cesantias")
 
-    Caja = fields.Many2one('res.partner', string="Caja de compensación familiar")
+    caja = fields.Many2one('res.partner', string="Caja de compensación familiar")
 
     
