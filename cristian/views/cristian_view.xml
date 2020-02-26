@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook/page[@name='information']" position="after">
-                <page name="Prestaciones Sociales">
+                <page name="prestaciones" string="Prestaciones Sociales">
                     <group>
                         <group>
                             <field name="arl"/>
