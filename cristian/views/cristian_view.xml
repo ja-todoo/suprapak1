@@ -9,11 +9,11 @@
                 <page name="Prestaciones Sociales">
                     <group>
                         <group>
-                            <field name="ARL"/>
-                            <field name="EPS"/>
-                            <field name="Pension"/>
-                            <field name="Cesantias"/>
-                            <field name="Caja"/>
+                            <field name="arl"/>
+                            <field name="eps"/>
+                            <field name="pension"/>
+                            <field name="cesantias"/>
+                            <field name="caja"/>
                         </group>
                     </group>
                 </page>
