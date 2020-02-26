@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Desarrollo mrp',
+    'name': 'Desarrollo Contrato',
     'version': '13',
     'author': "Livingston Arias Narváez",
     'website': "www.todoo.com",
