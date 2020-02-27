@@ -6,9 +6,3 @@ class Terminaciones(models.Model):
 
     name = fields.Char('causales de finalización de contrato')
 
-class TerminacionesContrato(models.Model):
-    _inherit = 'hr.contract'
-    _description = 'Causales terminación de contratos'
-
-    Causales = fields.Many2one('causales',string="Causales terminación de contrato")
-
