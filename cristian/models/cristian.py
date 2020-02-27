@@ -2,7 +2,7 @@ from odoo import fields, models, api
 
 class ContractCristian(models.Model):
 
-    _inherit = 'hr.contract'
+    _inherit = 'hr.employee'
     _description = 'Campos nuevos para el contrato'
 
     arl = fields.Many2one('res.partner',string="ARL")
