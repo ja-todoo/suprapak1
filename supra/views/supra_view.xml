@@ -10,8 +10,6 @@
             </xpath>
         </field>
     </record>
-</odoo>
-<odoo>
     <record id="view_form_causales" model="ir.ui.view">
         <field name="name">Causales.form</field>
         <field name="model">causales</field>
