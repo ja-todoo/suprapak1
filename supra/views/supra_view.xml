@@ -44,5 +44,5 @@
     <menuitem action="causales" 
     id="causales_menu_id"
     parent="hr.menu_human_resources_configuration"
-    sequence="7">
+    sequence="7"/>
 </odoo>
