@@ -29,7 +29,7 @@
     </record>
     <menuitem action="causales_action" 
     id="causales_menu_id"
-    parent="hr.menu_human_resources_configuration"
-    sequence="7"/>
+    parent="hr.menu_human_resources_configuration_employee"
+    sequence="101"/>
     
 </odoo>

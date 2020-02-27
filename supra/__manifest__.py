@@ -5,7 +5,8 @@
     'author': 'Livingston Arias Narváez',
     'summary': 'Sales internal with tax',
     'depends': ['hr','hr_contract'],
-    'data': ['views/supra_view.xml','views/terminacion_view.xml'],
+    'data': ['views/supra_view.xml',
+    'views/terminacion_view.xml','security/security.xml'],
 
     'installable': True,
     'auto_install': False,
