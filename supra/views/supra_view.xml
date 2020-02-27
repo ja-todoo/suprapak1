@@ -27,7 +27,7 @@
         <field name="res_model">causales</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem action="causales" 
+    <menuitem action="causales_action" 
     id="causales_menu_id"
     parent="hr.menu_human_resources_configuration"
     sequence="7"/>
