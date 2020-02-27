@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="0">
     <record id="causales_config" model="res.groups">
-        <field name="name"></field>
+        <field name="name">Causales</field>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 </odoo>
