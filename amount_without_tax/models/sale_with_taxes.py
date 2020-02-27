@@ -8,5 +8,5 @@ class SaleTaxes(models.Model):
         if self.price_tax:
             self.price = self.price_subtotal + self.price_tax
 
-    price1 = fields.Float('Subtotal',compute='calculo_amount')
+    price1=fields.Float('Subtotal',compute='calculo_amount')
 
