@@ -7,7 +7,7 @@ class SaleTaxes(models.Model):
     def calculo_amount(self):
     
         if self.price_tax:
-            self.subtotal_with_tax = float(self.price_subtotal) + self.price_tax
+            self.subtotal_with_tax = self.price_subtotal + self.price_tax
 
     subtotal_with_tax = fields.Float('Subtotal',compute='calculo_amount')
 
