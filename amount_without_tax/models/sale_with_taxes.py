@@ -22,11 +22,11 @@ class InvoiceTaxes(models.Model):
     price_tax = fields.Float(compute='_compute_amount', string='Total Tax', readonly=True, store=True)
     price_with_tax = fields.Float(compute='_compute_amount', string='Total With Tax', readonly=True, store=True)
 
-    @api.depends('product_uom_qty', 'discount', 'price_unit', 'tax_id')
+    @api.depends('quantity', 'discount', 'price_unit', 'tax_id')
     def _compute_amount(self):
         for line in self:
             price = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
-            taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.product_uom_qty, product=line.product_id, partner=line.order_id.partner_shipping_id)
+            taxes = line.tax_id.compute_all(price, line.order_id.currency_id, line.quantity, product=line.product_id, partner=line.order_id.partner_shipping_id)
             price_tax = sum(t.get('amount', 0.0) for t in taxes.get('taxes', []))
             price_with_tax = line.price_subtotal + price_tax
             line.update({
