@@ -1,7 +1,7 @@
 from odoo import models,fields,api
 
 class SaleTaxes(models.Model):
-    _inherit = 'sale.order'
+    _inherit = 'sale.order.line'
     _description = 'amount sum tax'
 
     def calculo_amount(self):
