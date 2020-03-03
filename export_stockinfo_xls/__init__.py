@@ -1,1 +1,0 @@
-#    GENERAL PUBLIC LICENSE (AGPL v3), Version 3.
